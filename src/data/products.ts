@@ -7,7 +7,11 @@ import racoil5w30SlCf35L from '@/assets/products/racoil-5w30-sl-cf-3.5l.png';
 import racoil5w30SmCf1L from '@/assets/products/racoil-5w30-sm-cf-1l.png';
 import racoil5w30SmCf3L from '@/assets/products/racoil-5w30-sm-cf-3l.png';
 import racoil5w30SmCf35L from '@/assets/products/racoil-5w30-sm-cf-3.5l.png';
-
+import racoil20w50SlCf1L from '@/assets/products/racoil-20w50-sl-cf-1l.png';
+import racoil20w50SlCf3L from '@/assets/products/racoil-20w50-sl-cf-3l.png';
+import racoil10w40Sm1L from '@/assets/products/racoil-10w40-sm-1l.png';
+import racoil10w40Sm3L from '@/assets/products/racoil-10w40-sm-3l.png';
+import racoil10w40Sm4L from '@/assets/products/racoil-10w40-sm-4l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -75,8 +79,8 @@ export const automotiveOils: Category = {
           name: 'RACOIL 20W-50 SL/CF',
           description: 'Heavy-duty multigrade engine oil designed to protect engines operating under high temperature and load conditions. Helps reduce oil consumption and extend engine life.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '3', price: 0 }
+            { size: '1', price: 750, image: racoil20w50SlCf1L },
+            { size: '3', price: 2190, image: racoil20w50SlCf3L }
           ],
           sizeUnit: 'liter'
         },
@@ -95,9 +99,9 @@ export const automotiveOils: Category = {
           name: 'RACOIL 10W-40 SM',
           description: 'Premium multigrade engine oil offering excellent cold start performance, reduced engine wear, and smooth operation for petrol engines.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '3', price: 0 },
-            { size: '4', price: 0 }
+            { size: '1', price: 1030, image: racoil10w40Sm1L },
+            { size: '3', price: 3030, image: racoil10w40Sm3L },
+            { size: '4', price: 4040, image: racoil10w40Sm4L }
           ],
           sizeUnit: 'liter'
         },
