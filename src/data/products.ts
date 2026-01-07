@@ -34,6 +34,18 @@ import racoilPlatinum15w40Ci4Plus_210L from '@/assets/products/racoil-platinum-1
 import racoilUtto10w30_1L from '@/assets/products/racoil-utto-10w30-1l.png';
 import racoilUtto10w30_10L from '@/assets/products/racoil-utto-10w30-10l.png';
 import racoilUtto10w30_20L from '@/assets/products/racoil-utto-10w30-20l.png';
+// RACOIL PLATINUM 15W-40 CH-4
+import racoilPlatinum15w40Ch4_1L from '@/assets/products/racoil-platinum-15w40-ch4-1l.png';
+import racoilPlatinum15w40Ch4_6L from '@/assets/products/racoil-platinum-15w40-ch4-6l.png';
+import racoilPlatinum15w40Ch4_65L from '@/assets/products/racoil-platinum-15w40-ch4-6.5l.png';
+import racoilPlatinum15w40Ch4_7L from '@/assets/products/racoil-platinum-15w40-ch4-7l.png';
+import racoilPlatinum15w40Ch4_8L from '@/assets/products/racoil-platinum-15w40-ch4-8l.png';
+import racoilPlatinum15w40Ch4_10L from '@/assets/products/racoil-platinum-15w40-ch4-10l.png';
+import racoilPlatinum15w40Ch4_15L from '@/assets/products/racoil-platinum-15w40-ch4-15l.png';
+import racoilPlatinum15w40Ch4_210L from '@/assets/products/racoil-platinum-15w40-ch4-210l.png';
+// RACOIL 4T 20W-50 SL/CF
+import racoil4t20w50SlCf_1L from '@/assets/products/racoil-4t-20w50-slcf-1l.png';
+import racoil4t20w50SlCf_12L from '@/assets/products/racoil-4t-20w50-slcf-1.2l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -179,14 +191,14 @@ export const automotiveOils: Category = {
           name: 'RACOIL PLATINUM 15W-40 CH-4',
           description: 'Reliable diesel engine oil designed for commercial vehicles, ensuring engine cleanliness and dependable performance under severe conditions.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '6', price: 0 },
-            { size: '6.5', price: 0 },
-            { size: '7', price: 0 },
-            { size: '8', price: 0 },
-            { size: '10', price: 0 },
-            { size: '15', price: 0 },
-            { size: '210', price: 0 }
+            { size: '1', price: 755, image: racoilPlatinum15w40Ch4_1L },
+            { size: '6', price: 4309, image: racoilPlatinum15w40Ch4_6L },
+            { size: '6.5', price: 4668, image: racoilPlatinum15w40Ch4_65L },
+            { size: '7', price: 5027, image: racoilPlatinum15w40Ch4_7L },
+            { size: '8', price: 5745, image: racoilPlatinum15w40Ch4_8L },
+            { size: '10', price: 7059, image: racoilPlatinum15w40Ch4_10L },
+            { size: '15', price: 10404, image: racoilPlatinum15w40Ch4_15L },
+            { size: '210', price: 122430, image: racoilPlatinum15w40Ch4_210L }
           ],
           sizeUnit: 'liter'
         },
@@ -217,8 +229,8 @@ export const automotiveOils: Category = {
           name: 'RACOIL 4T 20W-50 SL/CF',
           description: 'Specially formulated 4-stroke motorcycle oil ensuring smooth clutch performance, strong engine protection, and high thermal stability.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '1.2', price: 0 }
+            { size: '1', price: 723, image: racoil4t20w50SlCf_1L },
+            { size: '1.2', price: 868, image: racoil4t20w50SlCf_12L }
           ],
           sizeUnit: 'liter'
         },
