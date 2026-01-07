@@ -1,25 +1,31 @@
-import { Car, Factory, CircleDot, Snowflake } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Car, Factory, Droplets, Thermometer, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const products = [
   {
     icon: Car,
     title: 'Automotive Oils',
     description: 'Engine oils for all vehicles',
+    link: '/products/automotive-oils',
   },
   {
     icon: Factory,
     title: 'Industrial Oils',
     description: 'Heavy-duty industrial lubricants',
+    link: '/products/industrial-oils',
   },
   {
-    icon: CircleDot,
+    icon: Droplets,
     title: 'Greases',
     description: 'Premium quality greases',
+    link: '/products/greases',
   },
   {
-    icon: Snowflake,
-    title: 'Antifreeze & Coolants',
+    icon: Thermometer,
+    title: 'Coolants',
     description: 'Cooling system fluids',
+    link: '/products/coolants',
   },
 ];
 
@@ -38,8 +44,9 @@ const Products = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <div
+            <Link
               key={product.title}
+              to={product.link}
               className="group card-gradient rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 card-shadow"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -49,11 +56,22 @@ const Products = () => {
               <h3 className="font-display text-xl tracking-wide text-foreground mb-2">
                 {product.title}
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-sm mb-4">
                 {product.description}
               </p>
-            </div>
+              <span className="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                View Products <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link to="/products">
+            <Button size="lg" className="gap-2">
+              View All Products <ArrowRight className="w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
