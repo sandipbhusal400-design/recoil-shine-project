@@ -4,6 +4,9 @@
 import racoil5w30SlCf1L from '@/assets/products/racoil-5w30-sl-cf-1l.png';
 import racoil5w30SlCf3L from '@/assets/products/racoil-5w30-sl-cf-3l.png';
 import racoil5w30SlCf35L from '@/assets/products/racoil-5w30-sl-cf-3.5l.png';
+import racoil5w30SmCf1L from '@/assets/products/racoil-5w30-sm-cf-1l.png';
+import racoil5w30SmCf3L from '@/assets/products/racoil-5w30-sm-cf-3l.png';
+import racoil5w30SmCf35L from '@/assets/products/racoil-5w30-sm-cf-3.5l.png';
 
 export interface ProductSize {
   size: string;
@@ -61,9 +64,9 @@ export const automotiveOils: Category = {
           name: 'RACOIL 5W-30 SM/CF',
           description: 'Advanced engine oil formulated for modern engines, offering superior protection against wear, sludge, and oxidation while delivering reliable performance in all driving conditions.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '3', price: 0 },
-            { size: '4', price: 0 }
+            { size: '1', price: 980, image: racoil5w30SmCf1L },
+            { size: '3', price: 2920, image: racoil5w30SmCf3L },
+            { size: '3.5', price: 3893, image: racoil5w30SmCf35L }
           ],
           sizeUnit: 'liter'
         },

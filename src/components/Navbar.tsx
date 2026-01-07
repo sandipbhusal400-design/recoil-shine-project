@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoDesktop from '@/assets/logo-desktop.png';
+import logoMobile from '@/assets/logo-mobile.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,11 +74,17 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="bg-primary rounded-lg px-3 py-1">
-              <span className="font-display text-2xl text-primary-foreground tracking-wider">RACOIL</span>
-            </div>
-            <span className="hidden sm:block text-xs text-muted-foreground">Lubricants & Grease</span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logoDesktop} 
+              alt="RACOIL" 
+              className="hidden md:block h-12"
+            />
+            <img 
+              src={logoMobile} 
+              alt="RACOIL" 
+              className="md:hidden h-8"
+            />
           </Link>
 
           {/* Desktop Navigation */}
