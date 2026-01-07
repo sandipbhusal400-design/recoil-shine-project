@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { Product } from '@/data/products';
+import { Product, ProductSize, formatPrice } from '@/data/products';
 import { Button } from '@/components/ui/button';
 
 interface ProductDetailModalProps {
@@ -10,13 +10,15 @@ interface ProductDetailModalProps {
 }
 
 const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProps) => {
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  const [selectedSize, setSelectedSize] = useState<ProductSize>(product.sizes[0]);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
       setIsAnimating(true);
-      setSelectedSize(product.sizes[0]);
+      // Select first size with image, or first size
+      const initialSize = product.sizes.find(s => s.image) || product.sizes[0];
+      setSelectedSize(initialSize);
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -33,6 +35,13 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
       onClose();
     }, 200);
   };
+
+  const handleSizeSelect = (sizeObj: ProductSize) => {
+    setSelectedSize(sizeObj);
+  };
+
+  // Get current display image - use selected size image or fallback to any available image
+  const currentImage = selectedSize?.image || product.sizes.find(s => s.image)?.image;
 
   if (!isOpen) return null;
 
@@ -63,19 +72,25 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
 
         <div className="grid md:grid-cols-2 gap-0">
           {/* Product Image Section */}
-          <div className="bg-gradient-to-br from-muted to-muted/50 p-8 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
+          <div className="relative bg-gradient-to-br from-muted to-muted/50 p-8 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
             <div className="relative w-full h-full flex items-center justify-center">
-              {product.image ? (
+              {currentImage ? (
                 <img 
-                  src={product.image} 
+                  src={currentImage} 
                   alt={product.name}
                   className="max-w-full max-h-80 md:max-h-96 object-contain animate-fade-in"
+                  key={selectedSize?.size} // Force re-render on size change
                 />
               ) : (
                 <div className="w-48 h-64 bg-gradient-to-b from-primary/30 to-primary/10 rounded-xl flex items-center justify-center border-2 border-dashed border-primary/30">
                   <span className="text-primary/50 text-sm text-center px-4">Product Image</span>
                 </div>
               )}
+            </div>
+            
+            {/* Price Badge - Bottom Left of Image */}
+            <div className="absolute bottom-4 left-4 bg-primary text-primary-foreground font-bold px-4 py-2 rounded-lg shadow-lg text-lg">
+              {formatPrice(selectedSize?.price || 0)}
             </div>
           </div>
 
@@ -102,22 +117,27 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
             {/* Size Selection */}
             <div className="flex-1">
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">
-                Available Sizes
+                Select Size
               </h3>
               <div className="flex flex-wrap gap-2">
-                {product.sizes.map((size) => (
+                {product.sizes.map((sizeObj) => (
                   <Button
-                    key={size}
-                    variant={selectedSize === size ? 'default' : 'outline'}
+                    key={sizeObj.size}
+                    variant={selectedSize?.size === sizeObj.size ? 'default' : 'outline'}
                     size="sm"
-                    onClick={() => setSelectedSize(size)}
-                    className={`min-w-[80px] transition-all duration-200 ${
-                      selectedSize === size 
+                    onClick={() => handleSizeSelect(sizeObj)}
+                    className={`min-w-[100px] transition-all duration-200 flex flex-col items-center py-3 h-auto ${
+                      selectedSize?.size === sizeObj.size 
                         ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30' 
                         : 'hover:border-primary hover:text-primary'
                     }`}
                   >
-                    {size} {product.sizeUnit === 'kg' ? 'Kg' : 'Liter'}
+                    <span className="font-semibold">
+                      {sizeObj.size} {product.sizeUnit === 'kg' ? 'Kg' : 'L'}
+                    </span>
+                    <span className="text-xs opacity-80 mt-1">
+                      {sizeObj.price > 0 ? `Nrs. ${sizeObj.price}` : 'Ask'}
+                    </span>
                   </Button>
                 ))}
               </div>
@@ -126,10 +146,18 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
             {/* Selected Size Display */}
             <div className="mt-6 p-4 bg-muted rounded-lg">
               <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Selected Size:</span>
-                <span className="font-display text-xl text-primary">
-                  {selectedSize} {product.sizeUnit === 'kg' ? 'Kg' : 'Liter'}
-                </span>
+                <div>
+                  <span className="text-muted-foreground text-sm">Selected:</span>
+                  <span className="font-display text-xl text-foreground ml-2">
+                    {selectedSize?.size} {product.sizeUnit === 'kg' ? 'Kg' : 'Liter'}
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="text-muted-foreground text-sm">Price:</span>
+                  <span className="font-display text-xl text-primary ml-2">
+                    {formatPrice(selectedSize?.price || 0)}
+                  </span>
+                </div>
               </div>
             </div>
 

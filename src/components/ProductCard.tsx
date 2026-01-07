@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Product } from '@/data/products';
+import { Product, formatPrice } from '@/data/products';
 import ProductDetailModal from './ProductDetailModal';
 
 interface ProductCardProps {
@@ -8,6 +8,11 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Get the first size with an image, or the first size
+  const defaultSize = product.sizes.find(s => s.image) || product.sizes[0];
+  const displayImage = defaultSize?.image;
+  const displayPrice = defaultSize?.price || 0;
 
   return (
     <>
@@ -16,12 +21,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         onClick={() => setIsModalOpen(true)}
       >
         {/* Product Image Container */}
-        <div className="relative aspect-square bg-gradient-to-br from-muted to-muted/50 p-6 flex items-center justify-center overflow-hidden">
-          {/* Placeholder for product image */}
+        <div className="relative aspect-square bg-gradient-to-br from-muted to-muted/50 p-4 flex items-center justify-center overflow-hidden">
+          {/* Product Image */}
           <div className="w-full h-full flex items-center justify-center">
-            {product.image ? (
+            {displayImage ? (
               <img 
-                src={product.image} 
+                src={displayImage} 
                 alt={product.name}
                 className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
               />
@@ -32,11 +37,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
             )}
           </div>
           
+          {/* Price Badge - Bottom Left */}
+          <div className="absolute bottom-3 left-3 bg-primary text-primary-foreground text-sm font-semibold px-3 py-1.5 rounded-lg shadow-lg">
+            {formatPrice(displayPrice)}
+          </div>
+          
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300" />
           
           {/* View details badge */}
-          <div className="absolute bottom-3 right-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-3 right-3 bg-background/90 text-foreground text-xs px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-border">
             View Details
           </div>
         </div>
@@ -52,12 +62,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
           
           {/* Available Sizes Preview */}
           <div className="mt-3 flex flex-wrap gap-1">
-            {product.sizes.slice(0, 4).map((size) => (
+            {product.sizes.slice(0, 4).map((sizeObj) => (
               <span 
-                key={size} 
+                key={sizeObj.size} 
                 className="text-xs bg-muted px-2 py-0.5 rounded text-muted-foreground"
               >
-                {size} {product.sizeUnit === 'kg' ? 'kg' : 'L'}
+                {sizeObj.size} {product.sizeUnit === 'kg' ? 'kg' : 'L'}
               </span>
             ))}
             {product.sizes.length > 4 && (
