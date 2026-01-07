@@ -22,6 +22,18 @@ import racoilPlatinum15w40Ci4_7L from '@/assets/products/racoil-platinum-15w40-c
 import racoilPlatinum15w40Ci4_10L from '@/assets/products/racoil-platinum-15w40-ci4-10l.png';
 import racoilPlatinum15w40Ci4_15L from '@/assets/products/racoil-platinum-15w40-ci4-15l.png';
 import racoilPlatinum15w40Ci4_210L from '@/assets/products/racoil-platinum-15w40-ci4-210l.png';
+// RACOIL PLATINUM 15W-40 CI-4 PLUS
+import racoilPlatinum15w40Ci4Plus_1L from '@/assets/products/racoil-platinum-15w40-ci4-plus-1l.png';
+import racoilPlatinum15w40Ci4Plus_6L from '@/assets/products/racoil-platinum-15w40-ci4-plus-6l.png';
+import racoilPlatinum15w40Ci4Plus_65L from '@/assets/products/racoil-platinum-15w40-ci4-plus-6.5l.png';
+import racoilPlatinum15w40Ci4Plus_7L from '@/assets/products/racoil-platinum-15w40-ci4-plus-7l.png';
+import racoilPlatinum15w40Ci4Plus_10L from '@/assets/products/racoil-platinum-15w40-ci4-plus-10l.png';
+import racoilPlatinum15w40Ci4Plus_15L from '@/assets/products/racoil-platinum-15w40-ci4-plus-15l.png';
+import racoilPlatinum15w40Ci4Plus_210L from '@/assets/products/racoil-platinum-15w40-ci4-plus-210l.png';
+// RACOIL UTTO 10W-30
+import racoilUtto10w30_1L from '@/assets/products/racoil-utto-10w30-1l.png';
+import racoilUtto10w30_10L from '@/assets/products/racoil-utto-10w30-10l.png';
+import racoilUtto10w30_20L from '@/assets/products/racoil-utto-10w30-20l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -152,13 +164,13 @@ export const automotiveOils: Category = {
           name: 'RACOIL PLATINUM 15W-40 CI-4 PLUS',
           description: 'Enhanced heavy-duty engine oil offering superior protection against deposits, oxidation, and wear in high-load diesel engines.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '6', price: 0 },
-            { size: '6.5', price: 0 },
-            { size: '7', price: 0 },
-            { size: '10', price: 0 },
-            { size: '15', price: 0 },
-            { size: '210', price: 0 }
+            { size: '1', price: 797, image: racoilPlatinum15w40Ci4Plus_1L },
+            { size: '6', price: 4559, image: racoilPlatinum15w40Ci4Plus_6L },
+            { size: '6.5', price: 4939, image: racoilPlatinum15w40Ci4Plus_65L },
+            { size: '7', price: 5319, image: racoilPlatinum15w40Ci4Plus_7L },
+            { size: '10', price: 7475, image: racoilPlatinum15w40Ci4Plus_10L },
+            { size: '15', price: 11029, image: racoilPlatinum15w40Ci4Plus_15L },
+            { size: '210', price: 131250, image: racoilPlatinum15w40Ci4Plus_210L }
           ],
           sizeUnit: 'liter'
         },
@@ -261,9 +273,9 @@ export const automotiveOils: Category = {
           name: 'RACOIL UTTO 10W-30',
           description: 'Universal Tractor Transmission Oil suitable for transmissions, hydraulics, and wet brakes, ensuring smooth operation and equipment protection.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '10', price: 0 },
-            { size: '20', price: 0 }
+            { size: '1', price: 779, image: racoilUtto10w30_1L },
+            { size: '10', price: 7304, image: racoilUtto10w30_10L },
+            { size: '20', price: 14120, image: racoilUtto10w30_20L }
           ],
           sizeUnit: 'liter'
         }
