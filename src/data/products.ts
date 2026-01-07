@@ -58,6 +58,18 @@ import racoilPlatinum15w40Cf4_210L from '@/assets/products/racoil-platinum-15w40
 // RACOIL 4T 10W-30 SL/CF
 import racoil4t10w30SlCf_08L from '@/assets/products/racoil-4t-10w30-slcf-0.8l.png';
 import racoil4t10w30SlCf_1L from '@/assets/products/racoil-4t-10w30-slcf-1l.png';
+// RACOIL TRACTOR ENGINE OIL 20W-40 CF
+import racoilTractor20w40Cf_1L from '@/assets/products/racoil-tractor-20w40-cf-1l.png';
+import racoilTractor20w40Cf_3L from '@/assets/products/racoil-tractor-20w40-cf-3l.png';
+import racoilTractor20w40Cf_8L from '@/assets/products/racoil-tractor-20w40-cf-8l.png';
+import racoilTractor20w40Cf_10L from '@/assets/products/racoil-tractor-20w40-cf-10l.png';
+// RACOIL GEAR OIL EP 140 GL-3
+import racoilGearEp140Gl3_1L from '@/assets/products/racoil-gear-ep140-gl3-1l.png';
+import racoilGearEp140Gl3_10L from '@/assets/products/racoil-gear-ep140-gl3-10l.png';
+import racoilGearEp140Gl3_20L from '@/assets/products/racoil-gear-ep140-gl3-20l.png';
+// RACOIL AXLE OIL
+import racoilAxleOil_10L from '@/assets/products/racoil-axle-oil-10l.png';
+import racoilAxleOil_20L from '@/assets/products/racoil-axle-oil-20l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -285,10 +297,10 @@ export const automotiveOils: Category = {
           name: 'RACOIL TRACTOR ENGINE OIL 20W-40 CF',
           description: 'Specially designed for tractors and agricultural engines, providing reliable lubrication, engine protection, and durability during long working hours.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '3', price: 0 },
-            { size: '8', price: 0 },
-            { size: '10', price: 0 }
+            { size: '1', price: 718, image: racoilTractor20w40Cf_1L },
+            { size: '3', price: 2205, image: racoilTractor20w40Cf_3L },
+            { size: '8', price: 5686, image: racoilTractor20w40Cf_8L },
+            { size: '10', price: 6985, image: racoilTractor20w40Cf_10L }
           ],
           sizeUnit: 'liter'
         },
@@ -314,9 +326,19 @@ export const automotiveOils: Category = {
           name: 'RACOIL GEAR OIL EP 140 GL-3',
           description: 'Heavy-duty gear oil providing excellent load-carrying capacity and protection against wear in gear systems.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '10', price: 0 },
-            { size: '20', price: 0 }
+            { size: '1', price: 490, image: racoilGearEp140Gl3_1L },
+            { size: '10', price: 4800, image: racoilGearEp140Gl3_10L },
+            { size: '20', price: 9800, image: racoilGearEp140Gl3_20L }
+          ],
+          sizeUnit: 'liter'
+        },
+        {
+          id: 'racoil-axle-oil',
+          name: 'RACOIL AXLE OIL',
+          description: 'Extreme Pressure Transmission Oil designed for rear axles, providing excellent frictional properties and protection against rust, oxidation, and wear.',
+          sizes: [
+            { size: '10', price: 8400, image: racoilAxleOil_10L },
+            { size: '20', price: 16400, image: racoilAxleOil_20L }
           ],
           sizeUnit: 'liter'
         },
