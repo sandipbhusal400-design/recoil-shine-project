@@ -72,41 +72,42 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
 
         <div className="grid md:grid-cols-2 gap-0">
           {/* Product Image Section */}
-          <div className="relative bg-gradient-to-br from-muted to-muted/50 p-8 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
+          <div className="relative bg-gradient-to-br from-muted to-muted/50 p-4 sm:p-8 md:p-12 flex items-center justify-center min-h-[200px] sm:min-h-[300px] md:min-h-[500px]">
             <div className="relative w-full h-full flex items-center justify-center">
               {currentImage ? (
                 <img 
                   src={currentImage} 
                   alt={product.name}
-                  className="max-w-full max-h-80 md:max-h-96 object-contain animate-fade-in"
-                  key={selectedSize?.size} // Force re-render on size change
+                  className="max-w-full max-h-48 sm:max-h-80 md:max-h-96 object-contain animate-fade-in"
+                  key={selectedSize?.size}
+                  loading="lazy"
                 />
               ) : (
-                <div className="w-48 h-64 bg-gradient-to-b from-primary/30 to-primary/10 rounded-xl flex items-center justify-center border-2 border-dashed border-primary/30">
+                <div className="w-32 h-44 sm:w-48 sm:h-64 bg-gradient-to-b from-primary/30 to-primary/10 rounded-xl flex items-center justify-center border-2 border-dashed border-primary/30">
                   <span className="text-primary/50 text-sm text-center px-4">Product Image</span>
                 </div>
               )}
             </div>
             
             {/* Price Badge - Bottom Left of Image */}
-            <div className="absolute bottom-4 left-4 bg-primary text-primary-foreground font-bold px-4 py-2 rounded-lg shadow-lg text-lg">
+            <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-primary text-primary-foreground font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-lg text-base sm:text-lg">
               {formatPrice(selectedSize?.price || 0)}
             </div>
           </div>
 
           {/* Product Details Section */}
-          <div className="p-6 md:p-8 flex flex-col">
+          <div className="p-4 sm:p-6 md:p-8 flex flex-col">
             {/* Product Name */}
-            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-foreground mb-3 sm:mb-4">
               {product.name}
             </h2>
 
             {/* Description */}
-            <div className="mb-6">
-              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-xs sm:text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1 sm:mb-2">
                 Specification
               </h3>
-              <p className="text-foreground/80 leading-relaxed">
+              <p className="text-sm sm:text-base text-foreground/80 leading-relaxed line-clamp-3 sm:line-clamp-none">
                 {product.description}
               </p>
             </div>
@@ -116,17 +117,17 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
 
             {/* Size Selection */}
             <div className="flex-1">
-              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">
+              <h3 className="text-xs sm:text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2 sm:mb-4">
                 Select Size
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {product.sizes.map((sizeObj) => (
                   <Button
                     key={sizeObj.size}
                     variant={selectedSize?.size === sizeObj.size ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => handleSizeSelect(sizeObj)}
-                    className={`min-w-[100px] transition-all duration-200 flex flex-col items-center py-3 h-auto ${
+                    className={`min-w-[70px] sm:min-w-[100px] transition-all duration-200 flex flex-col items-center py-2 sm:py-3 h-auto text-xs sm:text-sm ${
                       selectedSize?.size === sizeObj.size 
                         ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30' 
                         : 'hover:border-primary hover:text-primary'
@@ -135,7 +136,7 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
                     <span className="font-semibold">
                       {sizeObj.size} {product.sizeUnit === 'kg' ? 'Kg' : 'L'}
                     </span>
-                    <span className="text-xs opacity-80 mt-1">
+                    <span className="text-[10px] sm:text-xs opacity-80 mt-0.5 sm:mt-1">
                       {sizeObj.price > 0 ? `Nrs. ${sizeObj.price}` : 'Ask'}
                     </span>
                   </Button>

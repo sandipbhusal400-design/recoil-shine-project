@@ -12,6 +12,16 @@ import racoil20w50SlCf3L from '@/assets/products/racoil-20w50-sl-cf-3l.png';
 import racoil10w40Sm1L from '@/assets/products/racoil-10w40-sm-1l.png';
 import racoil10w40Sm3L from '@/assets/products/racoil-10w40-sm-3l.png';
 import racoil10w40Sm4L from '@/assets/products/racoil-10w40-sm-4l.png';
+import racoil10w30Sl1L from '@/assets/products/racoil-10w30-sl-1l.png';
+import racoil10w30Sl3L from '@/assets/products/racoil-10w30-sl-3l.png';
+import racoil10w30Sl4L from '@/assets/products/racoil-10w30-sl-4l.png';
+import racoilPlatinum15w40Ci4_1L from '@/assets/products/racoil-platinum-15w40-ci4-1l.png';
+import racoilPlatinum15w40Ci4_6L from '@/assets/products/racoil-platinum-15w40-ci4-6l.png';
+import racoilPlatinum15w40Ci4_65L from '@/assets/products/racoil-platinum-15w40-ci4-6.5l.png';
+import racoilPlatinum15w40Ci4_7L from '@/assets/products/racoil-platinum-15w40-ci4-7l.png';
+import racoilPlatinum15w40Ci4_10L from '@/assets/products/racoil-platinum-15w40-ci4-10l.png';
+import racoilPlatinum15w40Ci4_15L from '@/assets/products/racoil-platinum-15w40-ci4-15l.png';
+import racoilPlatinum15w40Ci4_210L from '@/assets/products/racoil-platinum-15w40-ci4-210l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -110,9 +120,9 @@ export const automotiveOils: Category = {
           name: 'RACOIL 10W-30 SL',
           description: 'Fuel-efficient engine oil designed to provide effective lubrication, engine cleanliness, and reliable protection for modern petrol engines.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '3', price: 0 },
-            { size: '4', price: 0 }
+            { size: '1', price: 810, image: racoil10w30Sl1L },
+            { size: '3', price: 2390, image: racoil10w30Sl3L },
+            { size: '4', price: 3186, image: racoil10w30Sl4L }
           ],
           sizeUnit: 'liter'
         }
@@ -127,13 +137,13 @@ export const automotiveOils: Category = {
           name: 'RACOIL PLATINUM 15W-40 CI-4',
           description: 'High-performance diesel engine oil formulated for heavy-duty engines. Provides excellent wear protection, soot control, and long engine life.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '6', price: 0 },
-            { size: '6.5', price: 0 },
-            { size: '7', price: 0 },
-            { size: '10', price: 0 },
-            { size: '15', price: 0 },
-            { size: '210', price: 0 }
+            { size: '1', price: 772, image: racoilPlatinum15w40Ci4_1L },
+            { size: '6', price: 4412, image: racoilPlatinum15w40Ci4_6L },
+            { size: '6.5', price: 4779, image: racoilPlatinum15w40Ci4_65L },
+            { size: '7', price: 5147, image: racoilPlatinum15w40Ci4_7L },
+            { size: '10', price: 7230, image: racoilPlatinum15w40Ci4_10L },
+            { size: '15', price: 10662, image: racoilPlatinum15w40Ci4_15L },
+            { size: '210', price: 126000, image: racoilPlatinum15w40Ci4_210L }
           ],
           sizeUnit: 'liter'
         },
