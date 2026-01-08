@@ -94,6 +94,21 @@ import mpWhiteGrease_1Kg from '@/assets/products/mp-white-grease-1kg.png';
 import mpWhiteGrease_10Kg from '@/assets/products/mp-white-grease-10kg.png';
 import mpWhiteGrease_18Kg from '@/assets/products/mp-white-grease-18kg.png';
 import mpWhiteGrease_180Kg from '@/assets/products/mp-white-grease-180kg.png';
+// RACOIL 4T 10W-40 SM/CF
+import racoil4t10w40SmCf_1L from '@/assets/products/racoil-4t-10w40-smcf-1l.png';
+// RACOIL SUPER 4T 20W-50 CF/SF
+import racoilSuper4t20w50CfSf_1L from '@/assets/products/racoil-super-4t-20w50-cfsf-1l.png';
+// RACOIL GEAR OIL EP 90 GL-3
+import racoilGearEp90Gl3_1L from '@/assets/products/racoil-gear-ep90-gl3-1l.png';
+import racoilGearEp90Gl3_10L from '@/assets/products/racoil-gear-ep90-gl3-10l.png';
+import racoilGearEp90Gl3_20L from '@/assets/products/racoil-gear-ep90-gl3-20l.png';
+// RACOIL TRANSMISSION/GEAR OIL 85W-140 GL4
+import racoilGear85w140Gl4_1L from '@/assets/products/racoil-gear-85w140-gl4-1l.png';
+import racoilGear85w140Gl4_8L from '@/assets/products/racoil-gear-85w140-gl4-8l.png';
+import racoilGear85w140Gl4_10L from '@/assets/products/racoil-gear-85w140-gl4-10l.png';
+import racoilGear85w140Gl4_20L from '@/assets/products/racoil-gear-85w140-gl4-20l.png';
+// Coolant Ready Green
+import coolantReadyGreen_1L from '@/assets/products/coolant-ready-green-1l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -297,7 +312,7 @@ export const automotiveOils: Category = {
           name: 'RACOIL 4T 10W-40 SM/CF',
           description: 'Premium motorcycle oil offering superior engine cleanliness, reduced wear, and smooth acceleration.',
           sizes: [
-            { size: '1', price: 0 }
+            { size: '1', price: 980, image: racoil4t10w40SmCf_1L }
           ],
           sizeUnit: 'liter'
         },
@@ -306,7 +321,7 @@ export const automotiveOils: Category = {
           name: 'RACOIL SUPER 4T 20W-50 CF/SF',
           description: 'Motorcycle oil designed for high-temperature operation, ensuring long engine life and consistent performance.',
           sizes: [
-            { size: '1', price: 0 }
+            { size: '1', price: 516, image: racoilSuper4t20w50CfSf_1L }
           ],
           sizeUnit: 'liter'
         }
@@ -371,11 +386,9 @@ export const automotiveOils: Category = {
           name: 'RACOIL GEAR OIL EP 90 GL-3',
           description: 'Reliable gear oil ensuring smooth operation, reduced noise, and extended gear life.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '4', price: 0 },
-            { size: '8', price: 0 },
-            { size: '10', price: 0 },
-            { size: '20', price: 0 }
+            { size: '1', price: 490, image: racoilGearEp90Gl3_1L },
+            { size: '10', price: 4800, image: racoilGearEp90Gl3_10L },
+            { size: '20', price: 9800, image: racoilGearEp90Gl3_20L }
           ],
           sizeUnit: 'liter'
         },
@@ -384,11 +397,10 @@ export const automotiveOils: Category = {
           name: 'RACOIL TRANSMISSION/GEAR OIL 85W-140 GL4',
           description: 'High-viscosity gear oil designed for heavy-load transmissions and differentials.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '4', price: 0 },
-            { size: '8', price: 0 },
-            { size: '10', price: 0 },
-            { size: '20', price: 0 }
+            { size: '1', price: 760, image: racoilGear85w140Gl4_1L },
+            { size: '8', price: 5784, image: racoilGear85w140Gl4_8L },
+            { size: '10', price: 7110, image: racoilGear85w140Gl4_10L },
+            { size: '20', price: 13720, image: racoilGear85w140Gl4_20L }
           ],
           sizeUnit: 'liter'
         },
@@ -720,7 +732,7 @@ export const coolants: Category = {
       name: 'Coolant Ready Green',
       description: 'Ready-to-use engine coolants providing excellent protection against overheating, corrosion, and rust.',
       sizes: [
-        { size: '1', price: 0 }
+        { size: '1', price: 172, image: coolantReadyGreen_1L }
       ],
       sizeUnit: 'liter'
     },
