@@ -82,6 +82,18 @@ import chassicGrease_1Kg from '@/assets/products/chassic-grease-1kg.png';
 import chassicGrease_10Kg from '@/assets/products/chassic-grease-10kg.png';
 import chassicGrease_18Kg from '@/assets/products/chassic-grease-18kg.png';
 import chassicGrease_180Kg from '@/assets/products/chassic-grease-180kg.png';
+// Bearing Grease Red Gel
+import bearingGreaseRedGel_05Kg from '@/assets/products/bearing-grease-red-gel-0.5kg.png';
+import bearingGreaseRedGel_1Kg from '@/assets/products/bearing-grease-red-gel-1kg.png';
+import bearingGreaseRedGel_10Kg from '@/assets/products/bearing-grease-red-gel-10kg.png';
+import bearingGreaseRedGel_18Kg from '@/assets/products/bearing-grease-red-gel-18kg.png';
+import bearingGreaseRedGel_180Kg from '@/assets/products/bearing-grease-red-gel-180kg.png';
+// MP White Grease
+import mpWhiteGrease_05Kg from '@/assets/products/mp-white-grease-0.5kg.png';
+import mpWhiteGrease_1Kg from '@/assets/products/mp-white-grease-1kg.png';
+import mpWhiteGrease_10Kg from '@/assets/products/mp-white-grease-10kg.png';
+import mpWhiteGrease_18Kg from '@/assets/products/mp-white-grease-18kg.png';
+import mpWhiteGrease_180Kg from '@/assets/products/mp-white-grease-180kg.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -639,18 +651,15 @@ export const greases: Category = {
       sizeUnit: 'kg'
     },
     {
-      id: 'bearing-grease-gel',
-      name: 'Bearing Grease Ged Gel',
+      id: 'bearing-grease-red-gel',
+      name: 'Bearing Grease Red Gel',
       description: 'Smooth-texture grease providing long-lasting bearing protection.',
       sizes: [
-        { size: '0.5', price: 0 },
-        { size: '1', price: 0 },
-        { size: '2', price: 0 },
-        { size: '3', price: 0 },
-        { size: '5', price: 0 },
-        { size: '10', price: 0 },
-        { size: '18', price: 0 },
-        { size: '180', price: 0 }
+        { size: '0.5', price: 597, image: bearingGreaseRedGel_05Kg },
+        { size: '1', price: 1123, image: bearingGreaseRedGel_1Kg },
+        { size: '10', price: 10735, image: bearingGreaseRedGel_10Kg },
+        { size: '18', price: 19103, image: bearingGreaseRedGel_18Kg },
+        { size: '180', price: 171180, image: bearingGreaseRedGel_180Kg }
       ],
       sizeUnit: 'kg'
     },
@@ -688,14 +697,11 @@ export const greases: Category = {
       name: 'MP White Grease',
       description: 'Water-resistant grease suitable for automotive and industrial use.',
       sizes: [
-        { size: '0.5', price: 0 },
-        { size: '1', price: 0 },
-        { size: '2', price: 0 },
-        { size: '3', price: 0 },
-        { size: '5', price: 0 },
-        { size: '10', price: 0 },
-        { size: '18', price: 0 },
-        { size: '180', price: 0 }
+        { size: '0.5', price: 331, image: mpWhiteGrease_05Kg },
+        { size: '1', price: 588, image: mpWhiteGrease_1Kg },
+        { size: '10', price: 5392, image: mpWhiteGrease_10Kg },
+        { size: '18', price: 9485, image: mpWhiteGrease_18Kg },
+        { size: '180', price: 75060, image: mpWhiteGrease_180Kg }
       ],
       sizeUnit: 'kg'
     }
