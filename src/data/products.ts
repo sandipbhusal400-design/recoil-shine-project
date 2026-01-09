@@ -120,7 +120,12 @@ import coolantReadyRed_1L from '@/assets/products/coolant-ready-red-1l.png';
 // Coolant Green 1:4
 import coolantGreen14_1L from '@/assets/products/coolant-green-1-4-1l.png';
 // RACOIL TRANSMISSION/GEAR OIL 85W-140 GL5
-import racoilGear85w140Gl5_1L from '@/assets/products/racoil-gear-85w140-gl5-1l.png';
+import racoilGear85w140Gl5_1L from '@/assets/products/racoil-gear-85w140-gl5-1l-v2.png';
+import racoilGear85w140Gl5_8L from '@/assets/products/racoil-gear-85w140-gl5-8l.png';
+import racoilGear85w140Gl5_10L from '@/assets/products/racoil-gear-85w140-gl5-10l.png';
+import racoilGear85w140Gl5_20L from '@/assets/products/racoil-gear-85w140-gl5-20l.png';
+// Industrial Oils 210L
+import racoilIndustrial210L from '@/assets/products/racoil-industrial-210l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -421,11 +426,10 @@ export const automotiveOils: Category = {
           name: 'RACOIL TRANSMISSION/GEAR OIL 85W-140 GL5',
           description: 'Extreme-pressure gear oil offering superior protection under severe operating conditions.',
           sizes: [
-            { size: '1', price: 735, image: racoilGear85w140Gl5_1L },
-            { size: '4', price: 0 },
-            { size: '8', price: 0 },
-            { size: '10', price: 0 },
-            { size: '20', price: 0 }
+            { size: '1', price: 760, image: racoilGear85w140Gl5_1L },
+            { size: '8', price: 5784, image: racoilGear85w140Gl5_8L },
+            { size: '10', price: 7110, image: racoilGear85w140Gl5_10L },
+            { size: '20', price: 13720, image: racoilGear85w140Gl5_20L }
           ],
           sizeUnit: 'liter'
         },
@@ -498,7 +502,7 @@ export const industrialOils: Category = {
           description: 'Industrial gear oils formulated to handle heavy loads, reduce wear, and protect gears from rust and oxidation.',
           sizes: [
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 127500, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -508,7 +512,7 @@ export const industrialOils: Category = {
           description: 'Industrial gear oils formulated to handle heavy loads, reduce wear, and protect gears from rust and oxidation.',
           sizes: [
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 148500, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -518,7 +522,7 @@ export const industrialOils: Category = {
           description: 'Industrial gear oils formulated to handle heavy loads, reduce wear, and protect gears from rust and oxidation.',
           sizes: [
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 138750, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         }
@@ -534,7 +538,7 @@ export const industrialOils: Category = {
           description: 'High-quality heat transfer oils offering excellent thermal stability and efficient heat circulation in heating systems.',
           sizes: [
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 196000, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -545,7 +549,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 212625, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         }
@@ -562,7 +566,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 95760, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -573,7 +577,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 98760, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -584,7 +588,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 66990, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -595,7 +599,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 99000, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         }
@@ -612,7 +616,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 101250, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -623,7 +627,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 79500, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -634,7 +638,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 79500, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         },
@@ -645,7 +649,7 @@ export const industrialOils: Category = {
           sizes: [
             { size: '10', price: 0 },
             { size: '20', price: 0 },
-            { size: '210', price: 0 }
+            { size: '210', price: 79500, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
         }
