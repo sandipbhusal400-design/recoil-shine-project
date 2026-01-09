@@ -109,6 +109,18 @@ import racoilGear85w140Gl4_10L from '@/assets/products/racoil-gear-85w140-gl4-10
 import racoilGear85w140Gl4_20L from '@/assets/products/racoil-gear-85w140-gl4-20l.png';
 // Coolant Ready Green
 import coolantReadyGreen_1L from '@/assets/products/coolant-ready-green-1l.png';
+// HT Blue Grease
+import htBlueGrease_05Kg from '@/assets/products/ht-blue-grease-0.5kg.png';
+import htBlueGrease_1Kg from '@/assets/products/ht-blue-grease-1kg.png';
+import htBlueGrease_10Kg from '@/assets/products/ht-blue-grease-10kg.png';
+import htBlueGrease_18Kg from '@/assets/products/ht-blue-grease-18kg.png';
+import htBlueGrease_180Kg from '@/assets/products/ht-blue-grease-180kg.png';
+// Coolant Ready Red
+import coolantReadyRed_1L from '@/assets/products/coolant-ready-red-1l.png';
+// Coolant Green 1:4
+import coolantGreen14_1L from '@/assets/products/coolant-green-1-4-1l.png';
+// RACOIL TRANSMISSION/GEAR OIL 85W-140 GL5
+import racoilGear85w140Gl5_1L from '@/assets/products/racoil-gear-85w140-gl5-1l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -409,7 +421,7 @@ export const automotiveOils: Category = {
           name: 'RACOIL TRANSMISSION/GEAR OIL 85W-140 GL5',
           description: 'Extreme-pressure gear oil offering superior protection under severe operating conditions.',
           sizes: [
-            { size: '1', price: 0 },
+            { size: '1', price: 735, image: racoilGear85w140Gl5_1L },
             { size: '4', price: 0 },
             { size: '8', price: 0 },
             { size: '10', price: 0 },
@@ -680,14 +692,11 @@ export const greases: Category = {
       name: 'HT Blue Grease',
       description: 'High-temperature grease suitable for demanding applications.',
       sizes: [
-        { size: '0.5', price: 0 },
-        { size: '1', price: 0 },
-        { size: '2', price: 0 },
-        { size: '3', price: 0 },
-        { size: '5', price: 0 },
-        { size: '10', price: 0 },
-        { size: '18', price: 0 },
-        { size: '180', price: 0 }
+        { size: '0.5', price: 745, image: htBlueGrease_05Kg },
+        { size: '1', price: 1470, image: htBlueGrease_1Kg },
+        { size: '10', price: 13560, image: htBlueGrease_10Kg },
+        { size: '18', price: 24174, image: htBlueGrease_18Kg },
+        { size: '180', price: 220140, image: htBlueGrease_180Kg }
       ],
       sizeUnit: 'kg'
     },
@@ -741,7 +750,7 @@ export const coolants: Category = {
       name: 'Coolant Ready Red',
       description: 'Ready-to-use engine coolants providing excellent protection against overheating, corrosion, and rust.',
       sizes: [
-        { size: '1', price: 0 }
+        { size: '1', price: 380, image: coolantReadyRed_1L }
       ],
       sizeUnit: 'liter'
     },
@@ -750,7 +759,7 @@ export const coolants: Category = {
       name: 'Coolant Green 1:4',
       description: 'High-quality coolant concentrate ensuring effective engine cooling and long radiator life.',
       sizes: [
-        { size: '1', price: 0 }
+        { size: '1', price: 299, image: coolantGreen14_1L }
       ],
       sizeUnit: 'liter'
     }
