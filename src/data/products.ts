@@ -135,6 +135,18 @@ import racoilGear80w90Gl5_20L from '@/assets/products/racoil-gear-80w90-gl5-20l.
 import racoilGear80w90Gl4_1L from '@/assets/products/racoil-gear-80w90-gl4-1l.png';
 import racoilGear80w90Gl4_10L from '@/assets/products/racoil-gear-80w90-gl4-10l.png';
 import racoilGear80w90Gl4_20L from '@/assets/products/racoil-gear-80w90-gl4-20l.png';
+// RACOIL HYDRO AW 46
+import racoilHydroAw46_10L from '@/assets/products/racoil-hydro-aw-46-10l.png';
+import racoilHydroAw46_20L from '@/assets/products/racoil-hydro-aw-46-20l.png';
+// RACOIL HYDRO AW 68
+import racoilHydroAw68_10L from '@/assets/products/racoil-hydro-aw-68-10l.png';
+import racoilHydroAw68_20L from '@/assets/products/racoil-hydro-aw-68-20l.png';
+// RACOIL HYDRO SUPER 68
+import racoilHydroSuper68_10L from '@/assets/products/racoil-hydro-super-68-10l.png';
+import racoilHydroSuper68_20L from '@/assets/products/racoil-hydro-super-68-20l.png';
+// RACOIL ATF II/TQ
+import racoilAtfIiTq_1L from '@/assets/products/racoil-atf-ii-tq-1l.png';
+import racoilAtfIiTq_20L from '@/assets/products/racoil-atf-ii-tq-20l.png';
 export interface ProductSize {
   size: string;
   price: number;
@@ -450,9 +462,8 @@ export const automotiveOils: Category = {
           name: 'RACOIL ATF II/TQ',
           description: 'Automatic Transmission Fluid providing smooth gear shifting, oxidation resistance, and transmission protection.',
           sizes: [
-            { size: '1', price: 0 },
-            { size: '10', price: 0 },
-            { size: '20', price: 0 }
+            { size: '1', price: 650, image: racoilAtfIiTq_1L },
+            { size: '20', price: 12090, image: racoilAtfIiTq_20L }
           ],
           sizeUnit: 'liter'
         },
@@ -534,8 +545,8 @@ export const industrialOils: Category = {
           name: 'RACOIL HYDRO AW 46',
           description: 'Anti-wear hydraulic oil providing smooth power transmission and equipment protection.',
           sizes: [
-            { size: '10', price: 0 },
-            { size: '20', price: 0 },
+            { size: '10', price: 5784, image: racoilHydroAw46_10L },
+            { size: '20', price: 11078, image: racoilHydroAw46_20L },
             { size: '210', price: 95760, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
@@ -545,8 +556,8 @@ export const industrialOils: Category = {
           name: 'RACOIL HYDRO AW 68',
           description: 'Premium hydraulic oil suitable for high-pressure hydraulic systems.',
           sizes: [
-            { size: '10', price: 0 },
-            { size: '20', price: 0 },
+            { size: '10', price: 5784, image: racoilHydroAw68_10L },
+            { size: '20', price: 11078, image: racoilHydroAw68_20L },
             { size: '210', price: 98760, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'
@@ -556,8 +567,8 @@ export const industrialOils: Category = {
           name: 'RACOIL HYDRO SUPER 68',
           description: 'Enhanced hydraulic oil offering improved oxidation resistance and long service life.',
           sizes: [
-            { size: '10', price: 0 },
-            { size: '20', price: 0 },
+            { size: '10', price: 4412, image: racoilHydroSuper68_10L },
+            { size: '20', price: 8333, image: racoilHydroSuper68_20L },
             { size: '210', price: 66990, image: racoilIndustrial210L }
           ],
           sizeUnit: 'liter'

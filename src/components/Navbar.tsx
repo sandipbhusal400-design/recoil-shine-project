@@ -96,7 +96,7 @@ const Navbar = () => {
 
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/9779709109923"
+            href="https://wa.me/9779857076023"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex"
@@ -124,7 +124,7 @@ const Navbar = () => {
                 <MobileNavItem key={link.href} link={link} />
               ))}
               <a
-                href="https://wa.me/9779709109923"
+                href="https://wa.me/9779857076023"
                 target="_blank"
                 rel="noopener noreferrer"
               >

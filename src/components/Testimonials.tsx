@@ -78,39 +78,72 @@ const Testimonials = () => {
     return testimonials.slice(start, start + itemsPerSlide);
   };
 
+  // Handle touch swipe for mobile
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
-    <section className="py-20 md:py-28 bg-muted/30">
+    <section className="py-16 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl tracking-wider mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl tracking-wider mb-4">
             TRUSTED BY OUR <span className="text-primary">CUSTOMERS</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Hear what our valued customers have to say about RACOIL products
           </p>
         </div>
 
         <div className="relative">
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - hidden on mobile */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-accent transition-colors hidden sm:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-accent transition-colors hidden md:flex"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-accent transition-colors hidden sm:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-accent transition-colors hidden md:flex"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* Testimonials Grid */}
-          <div className="overflow-hidden px-2">
+          {/* Testimonials Grid with touch support */}
+          <div 
+            className="overflow-hidden px-0 sm:px-2"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div
-              className="flex gap-6 transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-500 ease-in-out"
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
@@ -118,7 +151,7 @@ const Testimonials = () => {
               {Array.from({ length: maxIndex + 1 }).map((_, slideIndex) => (
                 <div
                   key={slideIndex}
-                  className="flex gap-6 min-w-full"
+                  className="flex gap-4 md:gap-6 min-w-full px-2 sm:px-0"
                   style={{ flex: '0 0 100%' }}
                 >
                   {testimonials
@@ -126,11 +159,11 @@ const Testimonials = () => {
                     .map((testimonial) => (
                       <div
                         key={testimonial.id}
-                        className="flex-1 card-gradient rounded-xl p-6 border border-border shadow-lg min-w-0"
+                        className="flex-1 card-gradient rounded-xl p-4 sm:p-6 border border-border shadow-lg min-w-0"
                       >
                         <div className="flex flex-col items-center text-center">
                           {/* Avatar */}
-                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-primary/20 mb-4">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-primary/20 mb-3 md:mb-4 flex-shrink-0">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
@@ -140,22 +173,22 @@ const Testimonials = () => {
                           </div>
 
                           {/* Name */}
-                          <h3 className="font-display text-lg md:text-xl tracking-wide text-foreground mb-2">
+                          <h3 className="font-display text-base sm:text-lg md:text-xl tracking-wide text-foreground mb-2">
                             {testimonial.name}
                           </h3>
 
                           {/* Stars */}
-                          <div className="flex gap-1 mb-4">
+                          <div className="flex gap-1 mb-3 md:mb-4">
                             {Array.from({ length: testimonial.rating }).map((_, i) => (
                               <Star
                                 key={i}
-                                className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary"
+                                className="w-4 h-4 fill-primary text-primary"
                               />
                             ))}
                           </div>
 
-                          {/* Review */}
-                          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                          {/* Review - full text visible */}
+                          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed break-words">
                             "{testimonial.review}"
                           </p>
                         </div>
@@ -167,7 +200,7 @@ const Testimonials = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-6 md:mt-8">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}

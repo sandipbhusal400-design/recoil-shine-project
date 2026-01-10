@@ -90,7 +90,7 @@ const Contact = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/9779709109923"
+                href="https://wa.me/9779857076023"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1"
